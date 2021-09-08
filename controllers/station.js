@@ -2,6 +2,7 @@
 
 const logger = require('../utils/logger');
 const stationStore = require('../models/station-store.js');
+const uuid = require('uuid');
 
 const station = {
   index(request, response) {
@@ -18,6 +19,7 @@ const station = {
     const stationId = request.params.id;
     const station = stationStore.getStation(stationId);
     const newReading = {
+      id: uuid.v1(),
       code: request.body.code,
       temperature: request.body.temperature,
       windSpeed: request.body.windSpeed,
@@ -29,7 +31,7 @@ const station = {
   
   deleteReading(request, response) {
     const stationId = request.params.id;
-    const readingId = request.params.readingId;
+    const readingId = request.params.readingid;
     logger.debug(`Deleting Reading ${readingId} from Station ${stationId}`);
     stationStore.removeReading(stationId, readingId);
     response.redirect('/station/' + stationId);
