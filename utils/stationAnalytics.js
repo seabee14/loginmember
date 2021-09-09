@@ -25,6 +25,11 @@ const stationAnalytics = {
     }
   },
   
+  getLatestreading(station) {
+    let latestReading = null;
+    
+  }
+  
   
   getMinWind(station) {
     let minWind = null;
