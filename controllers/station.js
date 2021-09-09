@@ -8,6 +8,20 @@ const station = {
   index(request, response) {
     const stationId = request.params.id;
     logger.debug('Station id = ', + stationId);
+    
+    let minTemp = null;
+    const station = stationStore.getStation(stationId)
+    if (playlist.songs.length > 0) {
+      shortestSong = playlist.songs[0];
+      for (let i = 1; i < playlist.songs.length; i++) {
+        if (playlist.songs[i].duration < shortestSong.duration) {
+          shortestSong = playlist.songs[i];
+        }
+      }
+    }
+    console.log(shortestSong);
+    
+    
     const viewData = {
       title: 'Station',
       station: stationStore.getStation(stationId),
