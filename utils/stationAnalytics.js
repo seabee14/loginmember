@@ -112,7 +112,7 @@ const stationAnalytics = {
       minPressure = station.readings[0];
       for (let i = 1; i < station.readings.length; i++) {
         if (station.readings[i].pressure < minPressure.pressure) {
-          minPressure = station.pressure[i];
+          minPressure = station.readings[i];
         }
       }
     }
