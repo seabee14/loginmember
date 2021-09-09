@@ -29,7 +29,7 @@ const station = {
       minPressure: minPressure,
       maxTemp: maxTemp,
       maxPressure: maxPressure,
-      maxWind
+      maxWind: maxWind
     };
     response.render('station', viewData);
   },
@@ -42,6 +42,7 @@ const station = {
       code: request.body.code,
       temperature: request.body.temperature,
       windSpeed: request.body.windSpeed,
+      windDirection: request.body.windDirection,
       pressure: request.body.pressure,
     };
     stationStore.addReading(stationId, newReading);

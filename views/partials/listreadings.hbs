@@ -4,6 +4,7 @@
       <th>Code</th>
       <th>Temperature</th>
       <th>Wind Speed</th>
+      <th>Wind Direction</th>
       <th>Pressure</th>
     </tr>
     
@@ -45,6 +46,7 @@
                 <h3> Wind: </h3>
                   <br>
                   <h3>Min: {{minWind.windSpeed}}</h3>
+                  <h3>Max: {{maxWind.windSpeed}}</h3>
             </div>
         </div>
         <div class="card">
@@ -54,8 +56,8 @@
                 <i class="large green atom icon"></i>
                 <h3> Pressure: </h3>
                   <br>
-                  <h3>Min: {{minPressure.pressure}} hpa </h3>
-                  <h3>Max: {{maxPressure.pressure}} hpa</h3>
+                  <h3>Min: {{minPressure.pressure}} hPa </h3>
+                  <h3>Max: {{maxPressure.pressure}} hPa</h3>
             </div>
         </div>
     </div>
@@ -71,6 +73,9 @@
         </td>
         <td>
         {{windSpeed}}
+        </td>
+        <td>
+        {{windDirection}}
         </td>
         <td>
         {{pressure}}
