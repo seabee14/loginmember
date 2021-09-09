@@ -21,6 +21,9 @@ const station = {
     const weatherCodes = stationAnalytics.getWeatherCodes(latestReading.code);
     const windDirection = stationAnalytics.getWindDirection(station);
     const windSpeed = stationAnalytics.getWindSpeed(station);
+    
+    
+    
 
     
     
