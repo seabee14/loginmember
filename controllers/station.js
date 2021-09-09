@@ -18,7 +18,7 @@ const station = {
     const minPressure = stationAnalytics.getMinPressure(station);
     const maxPressure = stationAnalytics.getMaxPressure(station);
     const latestReading = stationAnalytics.getLatestreading(station);
-    const weatherCodes = stationAnalytics.getWeatherCodes(Number(latestReading.code));
+    const weatherCodes = stationAnalytics.getWeatherCodes(latestReading.code);
     
     
     const viewData = {
