@@ -23,10 +23,6 @@ const station = {
     const windSpeed = stationAnalytics.getWindSpeed(station);
     
     
-    
-
-    
-    
     const viewData = {
       title: 'Station',
       station: stationStore.getStation(stationId),
@@ -38,7 +34,6 @@ const station = {
       maxTemp: maxTemp,
       maxPressure: maxPressure,
       maxWind: maxWind,
-      weatherCodes: weatherCodes,
       windDirection: windDirection,
       windSpeed: windSpeed
     };
