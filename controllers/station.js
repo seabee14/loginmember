@@ -15,21 +15,24 @@ const station = {
     const maxTemp = stationAnalytics.getMaxTemp(station);
     const minWind = stationAnalytics.getMinWind(station);
     const maxWind = stationAnalytics.getMaxWind(station);
-    const weatherCodes = stationAnalytics.getWeatherCodes(station);
     const minPressure = stationAnalytics.getMinPressure(station);
     const maxPressure = stationAnalytics.getMaxPressure(station);
+    const latestReading = stationAnalytics.getLatestreading(station);
+    const weatherCodes = stationAnalytics.getWeatherCodes(Number(latestReading.code));
     
     
     const viewData = {
       title: 'Station',
       station: stationStore.getStation(stationId),
+      latestReading: latestReading,
       minTemp: minTemp,
       minWind: minWind,
       weatherCodes: weatherCodes,
       minPressure: minPressure,
       maxTemp: maxTemp,
       maxPressure: maxPressure,
-      maxWind: maxWind
+      maxWind: maxWind,
+      weatherCodes: weatherCodes
     };
     response.render('station', viewData);
   },
