@@ -14,8 +14,8 @@ const station = {
     const minTemp = stationAnalytics.getMinTemp(station);
     const minWind = stationAnalytics.getMinWind(station);
     const weatherCodes = stationAnalytics.getWeatherCodes(station);
-    const lastReading = stationAnalytics.getlastReading(station);
-    console.log(minTemp);
+    const minPressure = stationAnalytics.getMinPressure(station);
+    
     
     const viewData = {
       title: 'Station',
@@ -23,7 +23,7 @@ const station = {
       minTemp: minTemp,
       minWind: minWind,
       weatherCodes: weatherCodes,
-      lastReading: lastReading
+      minPressure: minPressure
     };
     response.render('station', viewData);
   },

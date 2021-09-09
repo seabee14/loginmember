@@ -23,15 +23,8 @@ const stationAnalytics = {
         default:
             return "Code Error";
     }
-},
-  
-  getLastReading(station) {
-    let lastReading = null;
-    if (station.readings.length > 0) {
-      lastReading = station.readings[station.readings.length - 1];
-      weatherCodes = stationAnalytics.getWeatherCodes()
-    }
   },
+  
   
   getMinWind(station) {
     let minWind = null;
@@ -57,6 +50,19 @@ const stationAnalytics = {
       }
     }
     return minTemp;
+  },
+  
+  getMinPressure(station) {
+    let minPressure = null;
+    if (station.readings.length > 0 ) {
+      minPressure = station.readings[0];
+      for (let i = 1; i < station.readings.length; i++) {
+        if (station.readings[i].pressure < minPressure.pressure) {
+          minPressure = station.pressure[i];
+        }
+      }
+    }
+    return minPressure;
   }
   
 };
