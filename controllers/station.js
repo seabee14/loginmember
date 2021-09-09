@@ -9,6 +9,18 @@ const station = {
     const stationId = request.params.id;
     logger.debug('Station id = ', + stationId);
     
+    let minTemp = null;        //minTemp
+    const station = stationStore.getStation(stationId)
+    if (station.readings.length > 0) {
+      minTemp = station.readings[0];
+      for (let i = 1; i < station.readings.length; i++) {
+        if (station.readings[i].temperature < minTemp.temperature) {
+          minTemp = station.readings[i];
+        }
+      }
+    }
+    console.log(minTemp);
+    
     const viewData = {
       title: 'Station',
       station: stationStore.getStation(stationId),
