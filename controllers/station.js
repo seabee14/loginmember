@@ -19,6 +19,7 @@ const station = {
     const maxPressure = stationAnalytics.getMaxPressure(station);
     const latestReading = stationAnalytics.getLatestreading(station);
     const weatherCodes = stationAnalytics.getWeatherCodes(latestReading.code);
+    const windDirecti
     
     
     const viewData = {
