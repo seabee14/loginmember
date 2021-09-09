@@ -12,9 +12,12 @@ const station = {
     
     const station = stationStore.getStation(stationId);
     const minTemp = stationAnalytics.getMinTemp(station);
+    const maxTemp = stationAnalytics.getMaxTemp(station);
     const minWind = stationAnalytics.getMinWind(station);
+    const maxWind = stationAnalytics.getMaxWind(station);
     const weatherCodes = stationAnalytics.getWeatherCodes(station);
     const minPressure = stationAnalytics.getMinPressure(station);
+    const maxPressure = stationAnalytics.getMaxPressure(station);
     
     
     const viewData = {
@@ -23,7 +26,10 @@ const station = {
       minTemp: minTemp,
       minWind: minWind,
       weatherCodes: weatherCodes,
-      minPressure: minPressure
+      minPressure: minPressure,
+      maxTemp: maxTemp,
+      maxPressure: maxPressure,
+      maxWind
     };
     response.render('station', viewData);
   },

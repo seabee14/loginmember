@@ -39,6 +39,21 @@ const stationAnalytics = {
     return minWind;
   },
   
+  
+  getMaxWind(station) {
+    let maxWind = null;
+    if (station.readings.length > 0) {
+      maxWind = station.readings[0];
+      for (let i = 1; i < station.readings.length; i++) {
+        if (station.readings[i].windSpeed > maxWind.windSpeed) {
+          maxWind = station.readings[i];
+        }
+      }
+    }
+    return maxWind;
+  },
+  
+  
   getMinTemp(station) {
     let minTemp = null;
     if (station.readings.length > 0) {
@@ -78,6 +93,19 @@ const stationAnalytics = {
       }
     }
     return minPressure;
+  },
+  
+  getMaxPressure(station) {
+    let maxPressure = null;
+    if (station.readings.length > 0) {
+      maxPressure = station.readings[0];
+      for (let i = 1; i < station.readings.length; i++) {
+        if (station.readings[i].pressure > maxPressure.pressure) {
+          maxPressure = station.readings[i];
+        }
+      }
+    }
+    return maxPressure;
   }
   
 };
