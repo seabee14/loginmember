@@ -19,7 +19,8 @@ const station = {
     const maxPressure = stationAnalytics.getMaxPressure(station);
     const latestReading = stationAnalytics.getLatestreading(station);
     const weatherCodes = stationAnalytics.getWeatherCodes(latestReading.code);
-    const windDirecti
+    const windDirection = stationAnalytics.getWindDirection(station);
+
     
     
     const viewData = {
@@ -33,7 +34,8 @@ const station = {
       maxTemp: maxTemp,
       maxPressure: maxPressure,
       maxWind: maxWind,
-      weatherCodes: weatherCodes
+      weatherCodes: weatherCodes,
+      windDirection: windDirection
     };
     response.render('station', viewData);
   },
