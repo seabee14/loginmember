@@ -41,6 +41,14 @@ const stationAnalytics = {
     return windDirection
   },
   
+  getWindSpeed(station) {
+    let windSpeed = null;
+    if (station.readings.length > 0) {
+      windSpeed = station.readings[station.readings.length - 1];
+    }
+    return windSpeed;
+  },
+  
   
   getMinWind(station) {
     let minWind = null;
