@@ -10,14 +10,11 @@ const station = {
     const stationId = request.params.id;
     logger.debug('Station id = ', + stationId);
     
-    let lastReading = null;
-    if (station.readings.length > 0) {//if there is a reading
-    lastReading = station.readings[station.readings.length - 1];
-    }
-    
     const station = stationStore.getStation(stationId);
     const minTemp = stationAnalytics.getMinTemp(station);
     const minWind = stationAnalytics.getMinWind(station);
+    const weatherCodes = stationAnalytics.getWeatherCodes(station);
+    const lastReading = stationAnalytics.getlastReading(station);
     console.log(minTemp);
     
     const viewData = {
@@ -25,6 +22,7 @@ const station = {
       station: stationStore.getStation(stationId),
       minTemp: minTemp,
       minWind: minWind,
+      weatherCodes: weatherCodes,
       lastReading: lastReading
     };
     response.render('station', viewData);

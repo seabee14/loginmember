@@ -25,6 +25,14 @@ const stationAnalytics = {
     }
 },
   
+  getLastReading(station) {
+    let lastReading = null;
+    if (station.readings.length > 0) {
+      lastReading = station.readings[station.readings.length - 1];
+      weatherCodes = stationAnalytics.getWeatherCodes()
+    }
+  },
+  
   getMinWind(station) {
     let minWind = null;
     if (station.readings.length > 0) {
