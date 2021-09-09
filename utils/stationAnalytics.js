@@ -52,6 +52,21 @@ const stationAnalytics = {
     return minTemp;
   },
   
+  
+  getMaxTemp(station) {
+    let maxTemp = null;
+    if (station.readings.length > 0) {
+      maxTemp = station.readings[0];
+      for (let i = 1; i < station.readings.length; i++) {
+        if (station.readings[i].temperature > maxTemp.temperature) {
+          maxTemp = station.readings[i];
+        }
+      }
+    }
+    return maxTemp;
+  },
+  
+  
   getMinPressure(station) {
     let minPressure = null;
     if (station.readings.length > 0 ) {
