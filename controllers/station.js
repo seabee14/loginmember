@@ -21,33 +21,6 @@ const station = {
     const weatherCodes = stationAnalytics.getWeatherCodes(latestReading.code);
     const windDirection = stationAnalytics.getWindDirection(station);
     const windSpeed = stationAnalytics.getWindSpeed(station);
-    
-    
-    if (station.windSpeed <= 1) {
-            station.beaufort = "0bft";
-        } else if (station.windSpeed > 1 && station.windSpeed <= 5) {
-            station.beaufort = "1bft";
-        } else if (station.windSpeed > 5 && station.windSpeed <= 11) {
-            station.beaufort = "2bft";
-        } else if (station.windSpeed > 11 && station.windSpeed <= 19) {
-            station.beaufort = "3bft";
-        } else if (station.windSpeed > 19 && station.windSpeed <= 28) {
-            station.beaufort = "4bft";
-        } else if (station.windSpeed > 28 && station.windSpeed <= 38) {
-            station.beaufort = "5bft";
-        } else if (station.windSpeed > 38 && station.windSpeed <= 49) {
-            station.beaufort = "6bft";
-        } else if (station.windSpeed > 49 && station.windSpeed <= 61) {
-            station.beaufort = "7bft";
-        } else if (station.windSpeed > 61 && station.windSpeed <= 74) {
-            station.beaufort = "8bft";
-        } else if (station.windSpeed > 74 && station.windSpeed <= 88) {
-            station.beaufort = "9bft";
-        } else if (station.windSpeed > 88 && station.windSpeed <= 102) {
-            station.beaufort = "10bft";
-        } else if (station.windSpeed > 102 && station.windSpeed <= 117) {
-            station.beaufort = "11bft";
-        }
 
     
     
@@ -64,8 +37,7 @@ const station = {
       maxWind: maxWind,
       weatherCodes: weatherCodes,
       windDirection: windDirection,
-      windSpeed: windSpeed,
-      beaufort: beaufort
+      windSpeed: windSpeed
     };
     response.render('station', viewData);
   },
