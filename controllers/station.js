@@ -22,6 +22,7 @@ const station = {
     const windDirection = stationAnalytics.getWindDirection(station);
     const windSpeed = stationAnalytics.getWindSpeed(station);
     const tempF = stationAnalytics.getTempF(station);
+    const beaufort = stationAnalytics.getBeaufort(station);
     
     
     const viewData = {
@@ -37,7 +38,8 @@ const station = {
       maxWind: maxWind,
       windDirection: windDirection,
       windSpeed: windSpeed,
-      tempF: tempF
+      tempF: tempF,
+      beaufort: beaufort
     };
     response.render('station', viewData);
   },
