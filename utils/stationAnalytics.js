@@ -40,33 +40,20 @@ const stationAnalytics = {
     }
   },
   
-  getBeaufort(station) {            //beaufort
-            if (station.windSpeed <= 1) {
-            station.beaufort = "0bft";
-        } else if (station.windSpeed > 1 && station.windSpeed <= 5) {
-            station.beaufort = "1bft";
-        } else if (station.windSpeed > 5 && station.windSpeed <= 11) {
-            station.beaufort = "2bft";
-        } else if (station.windSpeed > 11 && station.windSpeed <= 19) {
-            station.beaufort = "3bft";
-        } else if (station.windSpeed > 19 && station.windSpeed <= 28) {
-            station.beaufort = "4bft";
-        } else if (station.windSpeed > 28 && station.windSpeed <= 38) {
-            station.beaufort = "5bft";
-        } else if (station.windSpeed > 38 && station.windSpeed <= 49) {
-            station.beaufort = "6bft";
-        } else if (station.windSpeed > 49 && station.windSpeed <= 61) {
-            station.beaufort = "7bft";
-        } else if (station.windSpeed > 61 && station.windSpeed <= 74) {
-            station.beaufort = "8bft";
-        } else if (station.windSpeed > 74 && station.windSpeed <= 88) {
-            station.beaufort = "9bft";
-        } else if (station.windSpeed > 88 && station.windSpeed <= 102) {
-            station.beaufort = "10bft";
-        } else if (station.windSpeed > 102 && station.windSpeed <= 117) {
-            station.beaufort = "11bft";
-        }
-  },
+  getBeaufort(station) {
+    let latestReading = null;
+    let beaufort = "";
+    if (station.readings.length > 0) {
+      latestReading = station.readings[station.readings.length - 1];
+            if (latestReading.windSpeed <= 1) {
+              beaufort = "0bft";
+            } else if (latestReading.windSpeed > 1 && latestReading.windSpeed <= 5) {
+              beaufort = "1bft";
+            }  else if (latestReading.windSpeed > 5 && latestReading.windSpeed <= 11) {
+              beaufort = "2bft";
+            } else if (latestReading.windSpeed > 11 && latestReading.windSpeed <= 19) {
+              beaufort = "3bft";
+            } else if (latestReading.windSpeed > 19 && latestReading.windSpeed )
   
   getWindDirection(station) {
     let windDirection = null;
