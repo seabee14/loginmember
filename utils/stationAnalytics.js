@@ -36,8 +36,9 @@ const stationAnalytics = {
     getTempF(station) {  
     let tempF = null;
     if (station.readings.length > 0) {
-      tempF = ((station.readings [station.readings.length - 1] * (9)/5) + 32);
+      tempF = (((station.readings [station.readings.length - 1].temperature) * (9)/5) + 32);
     }
+      return tempF;
   },
   
   getBeaufort(station) {
@@ -77,12 +78,10 @@ const stationAnalytics = {
   
   
   getWindDirection(station) {
-    let windDirection = null;
-    if (station.readings.length > 0) {
-      windDirection = station.readings[station.readings.length - 1];
-    }
-    return windDirection
-  },
+    let latestReading = null;
+    let 
+    
+  
   
   getWindSpeed(station) {
     let windSpeed = null;
