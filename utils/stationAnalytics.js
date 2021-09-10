@@ -33,7 +33,7 @@ const stationAnalytics = {
     return latestReading;
   },
   
-    getTempF(station) {      //faranheit
+    getTempF(station) {  
     let tempF = null;
     if (station.readings.length > 0) {
       tempF = ((station.readings [station.readings.length - 1] * (9)/5) + 32);
@@ -53,7 +53,28 @@ const stationAnalytics = {
               beaufort = "2bft";
             } else if (latestReading.windSpeed > 11 && latestReading.windSpeed <= 19) {
               beaufort = "3bft";
-            } else if (latestReading.windSpeed > 19 && latestReading.windSpeed )
+            } else if (latestReading.windSpeed > 19 && latestReading.windSpeed <= 28) {
+              beaufort = "4bft";
+            } else if (latestReading.windSpeed > 28 && latestReading.windSpeed <= 38) {
+              beaufort = "5bft";
+            } else if (latestReading.windSpeed > 38 && latestReading.windSpeed <= 49) {
+              beaufort = "6bft";
+            } else if (latestReading.windSpeed > 49 && latestReading.windSpeed <= 61) {
+              beaufort = "7bft";
+            } else if (latestReading.windSpeed > 61 && latestReading.windSpeed <= 74) {
+              beaufort = "8bft";
+            } else if (latestReading.windSpeed > 74 && latestReading.windSpeed <= 88) {
+              beaufort = "9bft";
+            } else if (latestReading.windSpeed > 88 && latestReading.windSpeed <= 102) {
+              beaufort = "10bft";
+            } else if (latestReading.windSpeed > 102 && latestReading.windSpeed <= 117) {
+              beaufort = "11bft";
+            }
+        }
+    return beaufort;
+    
+  },
+  
   
   getWindDirection(station) {
     let windDirection = null;
