@@ -73,8 +73,8 @@ const stationAnalytics = {
             }
         }
     return beaufort;
-    
   },
+  
   
   getWindCompass(station) {
     let latestReading = null;
@@ -89,9 +89,34 @@ const stationAnalytics = {
         windCompass = "East";
       } else if (latestReading.windDirection > 78.75 && latestReading.windDirection <= 101.25) {
         windCompass = "East South East";
-      } else if (latestReading.windDirection > 101.25)
+      } else if (latestReading.windDirection > 101.25 && latestReading.windDirection <= 123.75) {
+        windCompass = "East South East";
+      } else if (latestReading.windDirection > 123.75 && latestReading.windDirection <= 146.25) {
+        windCompass = "South East";
+      } else if (latestReading.windDirection > 146.25 && latestReading.windDirection <= 168.75) {
+        windCompass = "South South East";
+      } else if (latestReading.windDirection > 168.75 && latestReading.windDirection <= 191.25) {
+        windCompass = "South";
+      } else if (latestReading.windDirection > 191.25 && latestReading.windDirection <= 213.75) {
+        windCompass = "South South West";
+      } else if (latestReading.windDirection > 213.75 && latestReading.windDirection <= 236.25) {
+        windCompass = "South West";
+      } else if (latestReading.windDirection > 236.25 && latestReading.windDirection <= 258.75) {
+        windCompass = "West South West";
+      } else if (latestReading.windDirection > 258.75 && latestReading.windDirection <= 281.25) {
+        windCompass = "West";
+      } else if (latestReading.windDirection > 281.25 && latestReading.windDirection <= 303.75) {
+        windCompass = "West North West";
+      } else if (latestReading.windDirection > 303.75 && latestReading.windDirection <= 326.25) {
+        windCompass = "North West";
+      } else if (latestReading.windDirection > 326.25 && latestReading.windDirection <= 348.75) {
+        windCompass = "North North West";
+      } else {
+        windCompass = "North";
+      }
     }
-  }
+    return windCompass;
+  },
   
   
   getWindDirection(station) {
