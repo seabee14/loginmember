@@ -33,6 +33,13 @@ const stationAnalytics = {
     return latestReading;
   },
   
+    getTempF(station) {
+    let tempF = null;
+    if (station.readings.length > 0) {
+      tempF = ((station.readings [station.readings.length - 1] * (9)/5) + 32);
+    }
+  },
+  
   getWindDirection(station) {
     let windDirection = null;
     if (station.readings.length > 0) {
