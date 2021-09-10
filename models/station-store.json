@@ -1,4 +1,44 @@
 {
-  "stationCollection" : [
+  "stationCollection": [
+    {
+      "id": "7a3b1250-122e-11ec-9255-613347ace7ee",
+      "title": "test",
+      "longitude": "test",
+      "lattitude": "test",
+      "readings": [
+        {
+          "id": "7f8dae70-122e-11ec-9255-613347ace7ee",
+          "code": "900",
+          "temperature": "20",
+          "windSpeed": "20",
+          "windDirection": "20",
+          "pressure": "999"
+        },
+        {
+          "id": "8e333940-122e-11ec-9255-613347ace7ee",
+          "code": "300",
+          "temperature": "10",
+          "windSpeed": "10",
+          "windDirection": "320",
+          "pressure": "300"
+        }
+      ]
+    },
+    {
+      "id": "9af2c600-122e-11ec-9255-613347ace7ee",
+      "title": "Woodstown",
+      "longitude": "Woodstown",
+      "lattitude": "Woodstown",
+      "readings": [
+        {
+          "id": "a32e7850-122e-11ec-9255-613347ace7ee",
+          "code": "900",
+          "temperature": "20",
+          "windSpeed": "20",
+          "windDirection": "20",
+          "pressure": "999"
+        }
+      ]
+    }
   ]
 }
