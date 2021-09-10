@@ -76,6 +76,23 @@ const stationAnalytics = {
     
   },
   
+  getWindCompass(station) {
+    let latestReading = null;
+    let windCompass = "";
+    if (station.readings.length > 0) {
+      latestReading = station.readings[station.readings.length - 1];
+      if (latestReading.windDirection > 11.25 && latestReading.windDirection <= 33.75) {
+        windCompass = "North North East";
+      } else if (latestReading.windDirection > 33.75 && latestReading.windDirection <= 56.25) {
+        windCompass = "East North East";
+      } else if (latestReading.windDirection > 56.25 && latestReading.windDirection <= 78.75) {
+        windCompass = "East";
+      } else if (latestReading.windDirection > 78.75 && latestReading.windDirection <= 101.25) {
+        windCompass = "East South East";
+      } else if (latestReading.windDirection > 101.25)
+    }
+  }
+  
   
   getWindDirection(station) {
     let windDirection = null;
