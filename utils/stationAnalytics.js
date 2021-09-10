@@ -78,10 +78,12 @@ const stationAnalytics = {
   
   
   getWindDirection(station) {
-    let latestReading = null;
-    let 
-    
-  
+    let windDirection = null;
+    if (station.readings.length > 0) {
+      windDirection = station.readings[station.readings.length - 1];
+    }
+    return windDirection
+  },
   
   getWindSpeed(station) {
     let windSpeed = null;
